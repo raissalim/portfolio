@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,27 +12,32 @@
       background: #f7f7f7;
     }
 
-  header {
-  background: linear-gradient(135deg, #4b146b, #7a1ea2, #c06cd9);
-  padding: 8px 35px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-/}
- header h1 {
-  color: #fff;
-}
- nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #350a47;
-  font-size: 18px;
-}
- nav a:hover {
-  color: #ffffff;
-    text-shadow: 0px 0px 8px #e8b2ff;
-}
+    header {
+      background: linear-gradient(135deg, #4b146b, #7a1ea2, #c06cd9);
+      padding: 8px 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      /
+    }
+
+    header h1 {
+      color: #fff;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #350a47;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      text-shadow: 0px 0px 8px #e8b2ff;
+    }
+
     section {
       padding: 40px;
       background: #fff;
@@ -47,133 +53,127 @@
       align-items: center;
       gap: 20px;
     }
+
     .foto {
       width: 45%;
       border-radius: 10px;
     }
+
     .texto {
       width: 45%;
       font-size: 17px;
       font-family: 'Roboto', sans-serif;
       line-height: 1.6;
     }
-/* TÍTULO */
-.titulo-projetos {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 10px;
-}
 
-/* TEXTO INTRODUÇÃO */
-.texto-projetos {
-  text-align: center;
-  font-size: 18px;
-  width: 70%;
-  margin: 0 auto 40px auto;
-  line-height: 1.6;
-}
+    #projetos {
+      padding: 80px 0;
+      text-align: center;
+    }
 
-/* GRID MODERNO */
-.grid-projetos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-}
+    .cards-projetos {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-/* CARD */
-.card-projeto {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
-  border: 3px solid #83008a;
-  overflow: hidden;
-  transition: 0.3s ease;
-}
+    .projeto-card {
+      width: 280px;
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      border: 2px solid #c06cd9;
+      box-shadow: 0 4px 10px #0002;
+      transition: transform .2s;
+    }
 
-/* HOVER DO CARD */
-.card-projeto:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
+    .projeto-card:hover {
+      transform: translateY(-5px);
+    }
 
-/* IMAGEM */
-.card-projeto img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-bottom: 3px solid #83008a;
-}
+    .projeto-card .thumb {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
 
-/* CONTEÚDO */
-.card-projeto .conteudo {
-  padding: 20px;
-  font-family: 'Roboto', sans-serif;
-}
+    .tags span {
+      display: inline-block;
+      padding: 4px 10px;
+      margin: 3px;
+      font-size: 12px;
+      background: #ffe5ed;
+      border-radius: 50px;
+    }
 
-/* BOTÃO */
-.btn-projeto {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 15px;
-  background: linear-gradient(135deg, #7a1ea2, #c06cd9);
-  border-radius: 10px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  box-shadow: 0 0 6px rgba(0,0,0,0.2);
-  transition: 0.3s;
-}
+    .verProjeto {
+      margin-top: 10px;
+      padding: 10px;
+      border: none;
+      background: #7a1ea2;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
 
-.btn-projeto:hover {
-  background: #7a1ea2;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
-}
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #000a;
+      justify-content: center;
+      align-items: center;
+    }
 
-/* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.75);
-  z-index: 999;
-  justify-content: center;
-  align-items: center;
-}
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+    }
 
-/* CONTEÚDO DO MODAL */
-.modal-content {
-  background: #fff;
-  padding: 20px;
-  width: 80%;
-  max-width: 340px;
-  border-radius: 12px;
-  position: relative;
-  animation: fadeIn 0.3s ease-in-out;
-}
+    #modalImagem {
+      width: 100%;
+      max-width: 600px;
+    }
 
-.midia-modal {
-  width: 100%;
-  border-radius: 10px;
-}
+    #fecharModal {
+      float: right;
+      font-size: 28px;
+      cursor: pointer;
+    }
 
-/* BOTÃO FECHAR */
-.fechar {
-  position: absolute;
-  right: 15px;
-  top: 5px;
-  font-size: 32px;
-  cursor: pointer;
-  color: #7a1ea2;
-  font-weight: bold;
-}
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
+    .controls button {
+      background: #7a1ea2;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
     /* HABILIDADES */
     .cards {
@@ -181,8 +181,9 @@
       justify-content: space-around;
       margin-top: 30px;
     }
+
     .card {
-      box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
       background: #fff;
       width: 180px;
       padding: 20px;
@@ -191,77 +192,79 @@
       text-align: center;
       font-family: 'Roboto', sans-serif;
     }
+
     .card img {
       width: 60px;
     }
-/* FORMULÁRIO */
-#mensagem {
-  padding: 40px;
-  background: #fff;
-  margin: 40px auto;
-  width: 85%;              
-  border-radius: 12px;
-  font-family: 'Roboto', sans-serif;
-}
 
-#mensagem h2 {
-  text-align: center;
-  margin-bottom: 35px;
-}
+    /* FORMULÁRIO */
+    #mensagem {
+      padding: 40px;
+      background: #fff;
+      margin: 40px auto;
+      width: 85%;
+      border-radius: 12px;
+      font-family: 'Roboto', sans-serif;
+    }
 
-/* container imagem + form */
-.form-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 90px;
-}
+    #mensagem h2 {
+      text-align: center;
+      margin-bottom: 35px;
+    }
 
-/* AQUI: limite da imagem */
-.imagem-contato {
-  width: 400px;          
-  height: auto;            
-  border-radius: 12px;
-  border: 2px solid #000;
-}
+    /* container imagem + form */
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 90px;
+    }
 
-/* formulário */
-#mensagem form {
-  display: flex;
-  flex-direction: column;
-  width: 350px;           
-}
+    /* AQUI: limite da imagem */
+    .imagem-contato {
+      width: 400px;
+      height: auto;
+      border-radius: 12px;
+      border: 2px solid #000;
+    }
 
-#mensagem label {
-  padding:05px;
-  margin-top: 18px;
-  font-weight: bold;
-}
+    /* formulário */
+    #mensagem form {
+      display: flex;
+      flex-direction: column;
+      width: 350px;
+    }
 
-#mensagem input,
-#mensagem textarea {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid #000;
-  border-radius: 10px;
-  background: #fcfcfc;
-}
+    #mensagem label {
+      padding: 05px;
+      margin-top: 18px;
+      font-weight: bold;
+    }
 
-#mensagem button {
-  margin-top: 20px;
-  padding: 12px;
-  width:107%;
-  background: linear-gradient(135deg, #7a1ea2, #c06cd9);
-  border-radius: 10px;
-  border: 2px solid #000;
-  font-size: 18px;
-  cursor: pointer;
-}
+    #mensagem input,
+    #mensagem textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #000;
+      border-radius: 10px;
+      background: #fcfcfc;
+    }
 
-#mensagem button:hover {
-  background: linear-gradient(135deg, #7a1ea2, #8a499d);
- box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
-}
+    #mensagem button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 107%;
+      background: linear-gradient(135deg, #7a1ea2, #c06cd9);
+      border-radius: 10px;
+      border: 2px solid #000;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    #mensagem button:hover {
+      background: linear-gradient(135deg, #7a1ea2, #8a499d);
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    }
 
 
     /* CONTATO */
@@ -269,13 +272,15 @@
       width: 60px;
       margin-right: 20px;
     }
-.icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 70px; 
-  margin-top: 20px;
-}
+
+    .icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 70px;
+      margin-top: 20px;
+    }
+
     footer {
       text-align: center;
       font-family: 'Roboto', sans-serif;
@@ -285,97 +290,100 @@
     }
 
 
-    
-/* 📱 CELULAR */
-@media (max-width: 768px) {
 
-  /* HEADER móvel */
-  header {
-    flex-direction: column;
-    padding: 20px;
-  }
+    /* 📱 CELULAR */
+    @media (max-width: 768px) {
 
-  nav a {
-    margin: 10px;
-    display: inline-block;
-  }
+      /* HEADER móvel */
+      header {
+        flex-direction: column;
+        padding: 20px;
+      }
 
-  /* SOBRE */
-  .flex {
-    flex-direction: column;
-    text-align: center;
-  }
+      nav a {
+        margin: 10px;
+        display: inline-block;
+      }
 
-  .foto, .texto {
-    width: 100%;
-  }
+      /* SOBRE */
+      .flex {
+        flex-direction: column;
+        text-align: center;
+      }
 
-  /* GRID PROJETOS */
-  .grid-projetos {
-    grid-template-columns: 1fr;
-  }
+      .foto,
+      .texto {
+        width: 100%;
+      }
 
-  /* CARDS */
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
+      /* GRID PROJETOS */
+      .grid-projetos {
+        grid-template-columns: 1fr;
+      }
 
-  /* FORM */
-  .form-container {
-    flex-direction: column;
-    gap: 30px;
-  }
+      /* CARDS */
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
 
-  .imagem-contato {
-    width: 100%;
-  }
+      /* FORM */
+      .form-container {
+        flex-direction: column;
+        gap: 30px;
+      }
 
-  #mensagem form {
-    width: 100%;
-  }
+      .imagem-contato {
+        width: 100%;
+      }
 
-  /* ÍCONES CONTATO */
-  .icons {
-    gap: 30px;
-    flex-wrap: wrap;
-  }
+      #mensagem form {
+        width: 100%;
+      }
 
-  .icons img {
-    width: 50px;
-  }
-}
+      /* ÍCONES CONTATO */
+      .icons {
+        gap: 30px;
+        flex-wrap: wrap;
+      }
 
-/* 📱 CELULAR MUITO PEQUENO */
-@media (max-width: 480px) {
+      .icons img {
+        width: 50px;
+      }
+    }
 
-  header h1 {
-    font-size: 22px;
-  }
+    /* 📱 CELULAR MUITO PEQUENO */
+    @media (max-width: 480px) {
 
-  nav a {
-    font-size: 16px;
-  }
+      header h1 {
+        font-size: 22px;
+      }
 
-  section {
-    width: 92%;
-    padding: 25px;
-  }
+      nav a {
+        font-size: 16px;
+      }
 
-  .card {
-    width: 90%;
-  }
+      section {
+        width: 92%;
+        padding: 25px;
+      }
 
-  .imagem-contato {
-    width: 100%;
-  }
+      .card {
+        width: 90%;
+      }
 
-  footer {
-    font-size: 14px;
-  }
-}
+      .imagem-contato {
+        width: 100%;
+      }
+
+      footer {
+        font-size: 14px;
+        padding: 8px 35px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <!-- NAVBAR -->
@@ -392,60 +400,71 @@
   <!-- SOBRE MIM -->
   <section id="sobre">
     <div class="flex">
-      <img src="img/cod.jpg" class="foto"/>
+      <img src="img/cod.jpg" class="foto" />
       <div class="texto">
         <h2>Sobre mim</h2>
-        <p>Sou uma pessoa extremamente curiosa e sempre tive fascínio por entender como as coisas funcionam, especialmente no mundo da tecnologia.<br>Desde jovem, esse interesse só cresceu, e foi ao ingressar na ETEC <br>de Guaianases que encontrei a porta de entrada para esse universo tecnológico.
-        A partir desse momento, descobri minha paixão por programação,desenvolvimento e resolução de problemas. Cada novo desafio me motiva a aprender mais e evoluir, sempre buscando aprimorar minhas habilidades e construir projetos que tenham propósito.</p>
+        <p>Sou uma pessoa extremamente curiosa e sempre tive fascínio por entender como as coisas funcionam,
+          especialmente no mundo da tecnologia.<br>Desde jovem, esse interesse só cresceu, e foi ao ingressar na ETEC
+          <br>de Guaianases que encontrei a porta de entrada para esse universo tecnológico.
+          A partir desse momento, descobri minha paixão por programação,desenvolvimento e resolução de problemas. Cada
+          novo desafio me motiva a aprender mais e evoluir, sempre buscando aprimorar minhas habilidades e construir
+          projetos que tenham propósito.</p>
       </div>
     </div>
   </section>
 
 
   <div id="modalProjeto" class="modal">
-  <div class="modal-content">
-    <span class="fechar" onclick="fecharModal()">&times;</span>
-    <img id="imagemModal" class="midia-modal" />
+    <div class="modal-content">
+      <span id="fecharModal">&times;</span>
+      <img id="modalImagem" src="" />
+      <div class="controls">
+        <button id="prev">◀</button>
+        <button id="next">▶</button>
+      </div>
+    </div>
   </div>
-</div>
-
 
 
   <!-- INTRODUÇÃO -->
- <section id="projetos">
-  <h2 class="titulo-projetos">Projetos Desenvolvidos</h2>
+  <section id="projetos">
+    <h2> Projetos Desenvolvidos</h2>
 
-  <div class="texto-projetos">
-    Atualmente estou desenvolvendo um aplicativo de receitas italianas, focado em praticidade e organização.<br>
-    Nele estou trabalhando cadastro de receitas, lista de ingredientes, modo de preparo e interface intuitiva.
-  </div>
+    <div class="cards-projetos">
 
-  <div class="grid-projetos">
+      <!-- PROJETO 1 -->
+      <div class="projeto-card">
+        <img src="img/homebonecashigh.png" class="thumb">
+        <h3> Loja Ghoul High</h3>
 
-  
-<div class="card-projeto">
-  <div class="conteudo">
-    <h3>Mamamia — Tela de Receitas</h3>
-    <p>Lista de receitas italianas com visual moderno e organizado.</p>
+        <div class="tags">
+          <span>Laravel</span>
+          <span>JavaScript</span>
+          <span>Html</span>
+          <span>phpmyadmin</span>
+          <span>Css</span>
+        </div>
 
-    <button class="btn-projeto" onclick="abrirModal('img/receitas.jpeg')">
-      Ver Projeto
-    </button>
-  </div>
-</div>
+        <button class="verProjeto" data-projeto="proj1">Ver +</button>
+      </div>
 
-<!-- CARD 2 -->
-<div class="card-projeto">
-  <div class="conteudo">
-    <h3>Mamamia — Tela Inicial</h3>
-    <p>Home do app com navegação rápida e design minimalista.</p>
+      <!-- PROJETO 2 -->
+      <div class="projeto-card">
+        <img src="img/loginadm.png" class="thumb">
+        <h3>Dashboard Split</h3>
 
-    <button class="btn-projeto" onclick="abrirModal('img/home.jpeg')">
-      Ver Projeto
-    </button>
-  </div>
-</div>
-</section>
+        <div class="tags">
+          <span>phpmyadmin</span>
+          <span>Laravel</span>
+          <span>Dashboard</span>
+        </div>
+
+        <button class="verProjeto" data-projeto="proj2">Ver +</button>
+      </div>
+
+      <!-- PROJETO 3 -->
+      
+  </section>
 
   <section id="habilidades">
     <h2>Hard Skills</h2>
@@ -453,83 +472,93 @@
       <div class="card">
         <img src="img/java-logo.png" />
         <h3>Java</h3>
-     <p><h3>Linguagem orientada a objetos usada para criar aplicações<br>  robustas, seguras e escaláveis.</h3></p>
+        <p>
+        <h3>Linguagem orientada a objetos usada para criar aplicações<br> robustas, seguras e escaláveis.</h3>
+        </p>
 
       </div>
       <div class="card">
         <img src="img/css-logo.png" />
         <h3>Css</h3>
-       <p><h3>Linguagem de estilo responsável por definir cores, layout e design das páginas web.</h3></p>
+        <p>
+        <h3>Linguagem de estilo responsável por definir cores, layout e design das páginas web.</h3>
+        </p>
 
       </div>
       <div class="card">
         <img src="img/html-logo.png" />
         <h3>HTML</h3>
-      <p><h3>Linguagem de marcação usada para estruturar conteúdos e elementos de páginas web.</h3></p>
+        <p>
+        <h3>Linguagem de marcação usada para estruturar conteúdos e elementos de páginas web.</h3>
+        </p>
       </div>
-       <div class="card">
+      <div class="card">
         <img src="img/laravel-logo.png" />
         <h3>Laravel</h3>
-     <p><h3>Framework PHP moderno que facilita o desenvolvimento de aplicações web rápidas e seguras.</h3></p>
+        <p>
+        <h3>Framework PHP moderno que facilita o desenvolvimento de aplicações web rápidas e seguras.</h3>
+        </p>
 
       </div>
-       <div class="card">
+      <div class="card">
         <img src="img/reactnative-logo.png" />
         <h3>React-Native</h3>
-       <p><h3>Framework para criar aplicativos mobile nativos usando JavaScript e componentes reutilizáveis.</h3></p>
+        <p>
+        <h3>Framework para criar aplicativos mobile nativos usando JavaScript e componentes reutilizáveis.</h3>
+        </p>
 
       </div>
     </div>
   </section>
 
 
-    
+
   <section id="habilidades">
     <h2>Soft Skills</h2>
     <div class="cards">
       <div class="card">
         <img src="img/comunicacao.png" />
         <h3>Comunicação</h3>
-        <p>Capacidade de transmitir ideias com clareza, ouvir ativamente e adaptar a mensagem ao público, garantindo entendimento e colaboração</p>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
       </div>
       <div class="card">
         <img src="img/produtividade.jpg" />
         <h3>Proatividade</h3>
-        <p>Iniciativa para agir antes das demandas, antecipando necessidades, buscando soluções e contribuindo para melhorias contínuas.</p>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
       </div>
       <div class="card">
         <img src="img/lideranca.png" />
         <h3>Liderança</h3>
-        <p>Habilidade de motivar e orientar pessoas, tomar decisões e conduzir a equipe para alcançar resultados de forma organizada e inspiradora.</p>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
       </div>
     </div>
   </section>
 
-<section id="mensagem">
-  <h2>Entre em contato comigo!</h2>
+  <section id="mensagem">
+    <h2>Entre em contato comigo!</h2>
 
-  <div class="form-container">
+    <div class="form-container">
 
-    <img src="img/forms.jpg" class="imagem-contato" />
+      <img src="img/forms.jpg" class="imagem-contato" />
 
-    <form action="https://formsubmit.co/raissamlima4536@gmail.com" method="POST">
+      <form action="https://formsubmit.co/raissamlima4536@gmail.com" method="POST">
 
-      <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_captcha" value="false">
 
-      <label>Digite seu nome:</label>
-      <input type="text" name="nome" required>
+        <label>Digite seu nome:</label>
+        <input type="text" name="nome" required>
 
-      <label>Digite seu email:</label>
-      <input type="email" name="email" required>
+        <label>Digite seu email:</label>
+        <input type="email" name="email" required>
 
-      <label>Digite sua mensagem:</label>
-      <textarea name="mensagem" rows="5" required></textarea>
+        <label>Digite sua mensagem:</label>
+        <textarea name="mensagem" rows="5" required></textarea>
 
-      <button type="submit">Enviar</button>
+        <button type="submit">Enviar</button>
 
-    </form>
-  </div>
-</section>
+      </form>
+    </div>
+  </section>
 
 
 
@@ -537,19 +566,19 @@
   <section id="contato">
     <h2>Contato</h2>
     <div class="icons">
-    
-      
-    <a href="https://github.com/raissalim" target="_blank">
-      <img src="img/github-logo.png" alt="GitHub" />
-    </a>
 
-    <a href="https://www.linkedin.com/in/raissa-mineiro" target="_blank">
-      <img src="img/linkedin-logo.png" alt="LinkedIn" />
-    </a>
 
-    <a href="https://instagram.com/raissa.milima" target="_blank">
-      <img src="img/instagram-logo.png" alt="Instagram" />
-    </a>
+      <a href="https://github.com/raissalim" target="_blank">
+        <img src="img/github-logo.png" alt="GitHub" />
+      </a>
+
+      <a href="https://www.linkedin.com/in/raissa-mineiro" target="_blank">
+        <img src="img/linkedin-logo.png" alt="LinkedIn" />
+      </a>
+
+      <a href="https://instagram.com/raissa.milima" target="_blank">
+        <img src="img/instagram-logo.png" alt="Instagram" />
+      </a>
 
     </div>
   </section>
@@ -561,16 +590,64 @@
 
   <!-- modal -->
   <script>
-  function abrirModal(imgSrc) {
-    document.getElementById("modalProjeto").style.display = "flex";
-    document.getElementById("imagemModal").src = imgSrc;
-  }
+  const modal = document.getElementById("modalProjeto");
+  const modalImg = document.getElementById("modalImagem");
+  const fechar = document.getElementById("fecharModal");
+  const prev = document.getElementById("prev");
+  const next = document.getElementById("next");
 
-  function fecharModal() {
-    document.getElementById("modalProjeto").style.display = "none";
-  }
+  let imagens = [];
+  let index = 0;
+
+  const projetos = {
+    proj1: [
+      "img/admincontato.png",
+      "img/avaliaçõeshigh.png",
+      "img/geraçoeshigh.png"
+    ],
+    proj2: [
+      "img/graficodash.png",
+      "img/denunciasusu.png",
+      "img/reativaradm.png"
+    ]
+  };
+
+  document.querySelectorAll(".verProjeto").forEach(btn => {
+    btn.addEventListener("click", () => {
+      imagens = projetos[btn.dataset.projeto];
+      index = 0;
+      modalImg.src = imagens[index];
+      modal.style.display = "flex";
+    });
+  });
+
+  next.onclick = () => {
+    index = (index + 1) % imagens.length;
+    modalImg.src = imagens[index];
+  };
+
+  prev.onclick = () => {
+    index = (index - 1 + imagens.length) % imagens.length;
+    modalImg.src = imagens[index];
+  };
+
+ 
+  fechar.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  modal.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  };
 </script>
 
 
+
+
+
+
 </body>
+
 </html>
